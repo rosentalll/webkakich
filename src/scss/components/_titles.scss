@@ -1,0 +1,38 @@
+.title {
+    font-size: 2em;
+    font-weight: bold;
+    
+    &--indents {
+        margin: 16px 0 16px 0;
+    }
+}
+
+.subtitle {
+    margin: 0;
+
+    height: auto;
+    line-height: 1.5;
+    background-color: white;
+  
+    font-size: 1.15em;
+    color: $color__gray;
+    font-weight: 500;
+
+    &--indents {
+        padding: 16px;
+        margin: 0 0 32px 0;
+    }
+}
+
+@include laptop {
+    .subtitle--indent {
+        padding: 16px 24px 16px 24px;
+    }
+}
+
+@include desktop {
+    .subtitle--indent {
+            padding: 16px 40px 16px 40px;
+    } 
+}
+

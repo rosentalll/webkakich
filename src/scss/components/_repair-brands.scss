@@ -1,0 +1,60 @@
+.brands {
+
+    &__swiper {
+        height: 130px;
+        margin: 0 auto 24px auto;
+    }
+
+    &__item { 
+    
+        width: 224px;
+        height: 73px;
+
+        background-color: white;
+        
+        padding: 0 14px 0 14px;
+        margin: 0;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    } 
+
+    &__icon-go {
+        flex-shrink: 0;
+    }
+
+    &__show-more {
+        display: none;
+    }
+    
+}
+
+
+
+@include laptop {
+
+    .brands {
+
+        &__swiper {
+            height: auto;
+        }
+
+        &__show-more {
+            display: block;
+        }
+        
+        &__swiper-slide--hidden {
+            display: none;
+        }
+    }
+
+}
+
+@media (min-width: 1033px) {
+    .brands__swiper-slide--hidden {
+        &:nth-child(7), &:nth-child(8) {
+            display: block;
+        }
+    }
+}

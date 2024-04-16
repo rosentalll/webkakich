@@ -1,0 +1,43 @@
+.button {
+    font-size: 0.86em;
+    font-weight: 600;
+
+    width: 119px;
+    height: 32px;
+
+    background-color: $color__icon-pink;
+    color: white;
+    border-radius: 16px;
+    border: none;
+
+    transition: opacity 0.1s ease-in-out, filter 0.1s;
+    
+    &:hover {
+        cursor: pointer;
+        filter: contrast(85%);
+    }
+
+    &:active {
+        opacity: 0.7;
+    }
+
+    &__text {
+
+        display: block;
+        transform: translateX(-8px);
+        position: relative;
+
+        &::after {
+
+            content: '';
+            @include more-sign($more-sign__white);
+
+            position: absolute;
+            left: 98px;
+            top: 2px;
+
+        }
+    }
+
+}
+

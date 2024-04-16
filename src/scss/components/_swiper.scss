@@ -1,0 +1,63 @@
+.swiper {
+    max-width: 1120px;
+    width: 100%;
+}
+
+.swiper-wrapper {
+    box-sizing: border-box;
+    width: auto;
+    padding: 0;
+}
+
+.swiper-slide {
+
+    flex-shrink: 1;
+    width: auto;
+    margin: 0 0 0 16px;  
+
+    &:last-child {
+        margin: 0 16px 0 16px;
+    }  
+
+    // &:hover .icon--go {
+    //     background-image: url('../../icons/go-hoover.svg');
+    // }
+
+    // &:active .icon--go {
+    //     opacity: 0.7;
+    // }
+}
+
+.swiper-pagination {
+    bottom: 14px;
+}
+
+.swiper-pagination-bullet {
+    width: 12px;
+    height: 12px;
+    background-color: $color__gray;
+}
+
+.swiper-pagination-bullet-active {
+    background-color: $bullet__active;
+}
+
+@include laptop {
+
+    .swiper-wrapper {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 16px 3%;
+        
+        padding: 0 24px 0 24px;
+    } 
+
+    .swiper-slide {
+        margin: 0;
+
+        &:last-child {
+            margin: 0;
+        }
+    }  
+}
+

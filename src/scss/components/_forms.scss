@@ -1,0 +1,35 @@
+.form {
+    margin: 0 0 16px 0;
+}
+
+.input, .textarea {
+
+    width: 100%;
+
+    border-radius: 8px;
+    border: 1px solid $color__gray-light;
+
+    padding: 16px;
+    margin: 0 0 16px 0;
+
+}
+
+.input:focus, .textarea:focus {
+    outline-color: $color__icon-pink;
+}
+
+.input {
+    height: 48px;
+}
+
+
+.textarea {
+    height: 118px;
+}
+
+.input-form-alarm {
+    display: block;
+    font-weight: normal;
+    margin: 0 0 16px 0;
+}
+

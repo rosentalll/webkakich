@@ -1,0 +1,161 @@
+.menu-bar {
+    
+    height: 100vh;
+    left: 0;
+    transition: opacity 0.2s;
+    
+    &__wrapper {
+        padding: 0 16px 0 16px;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+
+    &__header-nav-wrapper {
+        margin: 0 0 16px 0;
+    }
+    
+    
+    &__header-wrapper {
+        margin: 0 0 16px 0;
+        padding: 0;
+    }
+
+    &__logo {
+        display: block;
+        padding: 0 0 0 16px;
+    }
+
+    &__nav-list {
+
+        min-height: 363px;
+        list-style: none;
+        
+        padding: 0;
+        margin: 0;
+    
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    
+    &__nav-item {
+        
+        position: relative;
+    
+        &:before {
+            content: " ";
+            
+            background: #41F6D7;
+        
+            width: 4px;
+            height: 40px;
+            border-radius: 0 3px 3px 0;
+        
+            position: absolute;
+            left: -15px;
+            top: -11px;
+
+            opacity: 0;
+        }
+
+        &:hover::before {
+            opacity: 1;
+            transition: opacity 0.3s ease-in-out;
+        }
+
+
+    }
+    
+    &__nav-link {
+        text-decoration: none;
+        color: black;
+        transition: opacity 0.2s ease-in-out;
+    }
+    
+    &__nav-link:hover {
+        opacity: 0.6;
+    }
+    
+    &__tools {
+        margin: 0 0 16px 0;
+    }
+
+    &__contacts {
+        margin: 0 0 35px 0;
+    }
+
+    &__change-lang-buttons {
+        display: flex;
+        column-gap: 10px;
+
+        padding: 0 0 24px 0;
+        
+    }
+}
+
+.contacts {
+
+    &__phone {
+        font-size: 1.5em;
+        font-weight: bold;
+    }
+    
+    &__email {
+        margin: 0 0 16px 0;
+    }
+
+}
+
+.change-lang-button {
+    display: block;
+    border: none;
+    background-color: white;
+    padding: 0;
+
+    cursor: pointer;
+    
+    transition: opacity 0.2s ease-in-out;
+
+    &:hover {
+        opacity: 0.6;
+    }
+}
+
+
+/* МЕДИАЗАПРОСЫ (720 и 1120 px) */
+
+
+@media (min-width: 360px) {
+    .menu-bar {
+        width: 360px; 
+        &__wrapper {
+            padding: 0 24px 24px 24px;
+            width: 360px; 
+        }   
+        &__nav-item:hover::before {
+            left: -24px;
+        }
+    }
+}
+
+@include desktop {
+
+    .menu-bar {
+
+        position: sticky;
+        top: 0;
+        
+        &__wrapper {
+            position: fixed;
+            opacity: 1;
+            transform: translateX(0);
+            width: 320px;
+        }
+
+        &__header-wrapper {
+            justify-content: space-between;
+        }
+    }
+    
+} 

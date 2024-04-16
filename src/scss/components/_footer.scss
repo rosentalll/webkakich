@@ -1,0 +1,42 @@
+.footer {
+
+    &__wrapper {
+
+        padding: 0 16px 16px 16px;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        text-align: center;
+        gap: 16px;
+        
+    }
+
+    &__text {
+        color: $color__gray;
+        flex-basis: 33%;
+    }
+    
+}
+
+@include laptop {
+
+    .footer {
+
+        &__wrapper {
+            padding: 0 24px 16px 24px;
+            flex-direction: row;
+            text-align: left;
+        }
+
+    }
+    
+}
+
+@include desktop {
+    .footer__wrapper {
+        padding: 0 40px 16px 40px;
+        
+    }
+}

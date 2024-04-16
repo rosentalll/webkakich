@@ -1,0 +1,37 @@
+.show-more {
+ 
+    width: fit-content;
+    font-size: 1.15em;
+
+    display: none;
+
+    margin: 0 0 24px 30px;
+
+    background-color: $color__body-bg;
+    border: transparent;
+    
+    &__sign {
+        width: 24px;
+        height: 24px;
+        transition: transform 0.25s;
+
+        &--reverse {
+            transform: rotate(180deg);
+        }
+    }
+}
+
+@include laptop {
+    .show-more{
+        margin: 0 0 24px 38px;
+
+        display: flex;
+        align-items: center;
+    }
+}
+
+@include desktop {
+    .show-more {
+        margin: 0 0 24px 54px;
+    }
+}

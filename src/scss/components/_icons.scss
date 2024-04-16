@@ -1,0 +1,82 @@
+.icon {
+  display: block;
+  width: 40px;
+  height: 40px;
+  background-color: transparent;
+  border: none;
+  padding: 0;
+
+  transition: opacity 0.1s ease-in-out, filter 0.1s;
+
+  &:hover:not(.icon--go) {
+    cursor: pointer;
+    filter: contrast(85%);
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &--burger {
+    background-image: url('../img/nav.svg');
+  }
+
+  &--сall {
+    background-image: url('../img/call.svg');
+  }
+
+  &--chat {
+    background-image: url('../img/chat.svg');
+  }
+
+  &--profile {
+    background-image: url('../img/profile.svg');
+  }
+
+  &--application {
+    background-image: url('../img/repair.svg');
+  }
+
+  &--status {
+    background-image: url('../img/checkstatus.svg');
+  }
+
+  &--close {
+    background-image: url('../img/close.svg');
+  }
+
+  &--search {
+    background-image: url('../img/search.svg');
+  }
+
+  &--go {
+    background-image: url('../img/go.svg');
+    transition: background-image 0.2s;
+  }
+}
+
+@include laptop {
+  .icon--application {
+    margin-left: 32px;
+  }
+}
+
+@include desktop {
+  .icon {
+    &--status,
+    &--application {
+      background-repeat: no-repeat;
+      background-position: right;
+      margin: 0;
+
+      position: relative;
+      top: 20px;
+      z-index: 200;
+      min-width: 200px;
+    }
+
+    &--application {
+      min-width: 220px;
+    }
+  }
+}

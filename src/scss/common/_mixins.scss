@@ -1,0 +1,22 @@
+@mixin laptop() {
+    @media(min-width: 768px) {
+        @content;
+    }
+}
+
+@mixin desktop() {
+    @media(min-width: 1440px) {
+        @content;
+    }
+}
+
+@mixin more-sign($more-sign__color) {
+
+    display: block;
+
+    width: 7px;
+    height: 10px;
+
+    background-image: $more-sign__color;
+ 
+}

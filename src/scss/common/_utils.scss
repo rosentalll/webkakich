@@ -1,0 +1,23 @@
+.xs-hidden,
+.lg-visible {
+    display: none ;
+}
+
+@include laptop {
+    .xs-visible {
+        display: none ;
+    }
+    .xs-hidden {
+        display: block ;
+    }
+}
+
+@include desktop {
+    .lg-hidden {
+        display: none !important;
+    }
+
+    .lg-visible {
+        display: block;
+    }
+}

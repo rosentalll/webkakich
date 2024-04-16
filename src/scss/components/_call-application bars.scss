@@ -1,0 +1,57 @@
+.right-bar {
+    height: 100vh;
+    right: 0;
+}
+
+.icon-close-desktop {
+    display: none;
+}
+
+@include desktop {
+    .right-bar {
+        max-width: 440px;
+        width: 440px;
+
+        &__wrapper {
+            width: 440px;
+            padding: 24px;
+
+            &::before {
+                content: " ";
+                
+                background: $color__turquoise;
+                width: 4px;
+                height: 40px;
+                border-radius: 0 3px 3px 0;
+            
+                position: absolute;
+                left: 0px;
+                top: 36px;
+                z-index: 400;
+            }
+        }
+
+       
+    }
+
+    .side-close {
+        display: none;
+    }
+
+    .icon-close-desktop {
+        display: block;
+        position: fixed;
+        top: 34px;
+        right: 470px;
+        z-index: 400;
+        opacity: 0;
+        transition: opacity 0.2s, transform 0.2s;
+        transform: translateX(440px);
+    }
+
+    .icon-close-desktop--opened {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
