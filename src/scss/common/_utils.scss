@@ -1,14 +1,14 @@
 .xs-hidden,
 .lg-visible {
-    display: none ;
+    display: none !important;
 }
 
 @include laptop {
     .xs-visible {
-        display: none ;
+        display: none !important;
     }
     .xs-hidden {
-        display: block ;
+        display: block !important;
     }
 }
 
@@ -18,6 +18,6 @@
     }
 
     .lg-visible {
-        display: block;
+        display: block !important;
     }
 }

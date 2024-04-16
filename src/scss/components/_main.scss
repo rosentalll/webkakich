@@ -1,0 +1,54 @@
+.main {
+    &__title {
+
+        padding: 24px 16px 16px 16px;
+        position: relative;
+
+        &::before {
+            content: " ";
+            
+            background: $color__turquoise;
+            width: 4px;
+            height: 40px;
+            border-radius: 0 3px 3px 0;
+        
+            position: absolute;
+            left: 0px;
+            top: 18px;
+        }
+    }   
+            
+}
+
+@include laptop {
+    .main {
+
+        &__wrapper {
+            min-height: 350px;      
+        }
+    
+        &__title {
+            padding: 24px;
+        }
+    }
+}
+
+@include desktop {
+    .main {
+        
+        &__wrapper {   
+            transform: translateY(-88px); 
+        }
+
+        &__title {
+            padding: 48px 40px 0 40px;
+            margin-bottom: 16px;
+
+            &::before {
+                top: 44px;
+            }
+        }
+
+    }
+
+}

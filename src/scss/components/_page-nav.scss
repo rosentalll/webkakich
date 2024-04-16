@@ -1,0 +1,73 @@
+.page-nav {
+
+    font-size: 16px;
+
+    &::-webkit-scrollbar {
+        width: 0;
+    }
+
+    &__list {
+        margin: 0 0 16px 0;
+    }
+
+    &__item {
+    
+        padding: 6px 12px 6px 12px;
+        min-width: fit-content;
+        margin-left: 16px;
+        border: 2px solid transparent;
+        transition: all 0.2s ease-in-out;
+
+        &:hover {
+            // padding: 0 11px 0 11px;
+            box-sizing: border-box;
+            border: 2px solid $color__turquoise;
+            border-radius: 6px;
+            background-color: white;
+        }
+        
+    }
+ 
+}
+
+@include laptop {
+    .page-nav {
+
+        margin: 0;
+        max-width: none;
+
+        &__list {
+            flex-wrap: nowrap;
+            justify-content: flex-start;
+            gap: 0;
+            padding: 0 8px 0 8px;
+            max-width: 100%;
+        } 
+    
+        &__item {
+
+            margin: 0 0 0 16px;
+    
+            &:last-child {
+                margin: 0 0 16px 0;
+            }
+        }  
+    }
+}
+
+@include desktop {
+    .page-nav {
+
+        &__list {
+            padding: 0 40px 0 40px;
+            justify-content: flex-start;
+            flex-wrap: wrap;
+            gap: 12px 0;
+        }
+
+
+        &__item {
+           margin: 0;
+        }
+    }
+}

@@ -8,7 +8,7 @@
 
   transition: opacity 0.1s ease-in-out, filter 0.1s;
 
-  &:hover:not(.icon--go) {
+  &:hover {
     cursor: pointer;
     filter: contrast(85%);
   }
@@ -55,6 +55,10 @@
   }
 }
 
+.icon-close-desktop {
+  display: none;
+}
+
 @include laptop {
   .icon--application {
     margin-left: 32px;
@@ -78,5 +82,27 @@
     &--application {
       min-width: 220px;
     }
+
   }
+
+  .side-close {
+    display: none;
+  }
+
+  .icon-close-desktop {
+      display: block;
+      position: absolute;
+      top: 34px;
+      right: 470px;
+      z-index: 400;
+      opacity: 0;
+      transition: opacity 0.2s, transform 0.2s;
+      transform: translateX(440px);
+  }
+
+  .icon-close-desktop--opened {
+      opacity: 1;
+      transform: translateX(0);
+  }
+  
 }

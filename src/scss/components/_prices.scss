@@ -172,12 +172,6 @@
 
 }
 
-// .disclaimer__link-sign {
-//     @include more-sign($more-sign__red);
-//     min-height: 7px;
-//     align-self: center;
-// }
-
 @media (min-width: 334px) {
     .disclaimer__link::after {
         left: 309px;
