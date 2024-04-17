@@ -28,16 +28,22 @@ export function changeShowMoreText(button) {
             
             if (button.classList.contains('brand') && text.classList.contains('brand')) {
                 text.textContent = 'Скрыть';
-                console.log('brand');
             } 
 
             if (button.classList.contains('tech') && text.classList.contains('tech')) {
                 text.textContent = 'Скрыть';
-                console.log('tech');
             } 
 
         } else {
-            text.textContent = 'Показать всё';
+
+            if (button.classList.contains('tech') && text.classList.contains('tech')) {
+                text.textContent = 'Показать всё';
+            }
+
+            if (button.classList.contains('brand') && text.classList.contains('brand')) {
+                text.textContent = 'Показать всё';
+            }
+            
         }
     })
 }
