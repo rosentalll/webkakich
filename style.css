@@ -385,12 +385,6 @@ html {
   .body--open {
     overflow: hidden; }
 
-.open1 {
-  opacity: 0.05; }
-
-.open2 {
-  overflow: hidden; }
-
 @media (min-width: 1440px) {
   .body__inner {
     width: 1440px;
@@ -471,7 +465,7 @@ html {
     z-index: 400;
     opacity: 0;
     transition: opacity 0.2s, transform 0.2s;
-    transform: translateX(440px); }
+    transform: translateX(516px); }
   .icon-close-desktop--opened {
     opacity: 1;
     transform: translateX(0); } }
