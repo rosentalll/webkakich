@@ -22,31 +22,21 @@ export function reverseShowMoreSign(button) {
 }
 
 export function changeShowMoreText(button) {
-    showMoreTextes.forEach((text) => {
-
-        if (button.classList.contains('showed')) {
-            
-            if (button.classList.contains('brand') && text.classList.contains('brand')) {
-                text.textContent = 'Скрыть';
-            } 
-
-            if (button.classList.contains('tech') && text.classList.contains('tech')) {
-                text.textContent = 'Скрыть';
-            } 
-
-        } else {
-
-            if (button.classList.contains('tech') && text.classList.contains('tech')) {
-                text.textContent = 'Показать всё';
-            }
-
-            if (button.classList.contains('brand') && text.classList.contains('brand')) {
-                text.textContent = 'Показать всё';
-            }
-            
-        }
-    })
+  const checkButtonClasses = (text) => {
+    return (button.classList.contains("brand") && text.classList.contains("brand")) ||
+            (button.classList.contains("tech") && text.classList.contains("tech"));
+  }
+  showMoreTextes.forEach((text) => {
+    if (button.classList.contains("showed")) {
+      if (checkButtonClasses(text)) {
+        text.textContent = "Скрыть";
+      }
+    } else if (checkButtonClasses(text)) {
+      text.textContent = "Показать всё";
+    }
+  });
 }
+
 
 export function showContent (button) {
     hiddenContent.forEach((item) => {

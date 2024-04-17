@@ -10,7 +10,7 @@ import {
 import {
   sideBarOpenIcons,
   sideBarCloseIcons,
-  ghostIcon,
+  desktopCloseIcon,
   bodyWrapper,
   openSideBar,
   closeMenuBar,
@@ -47,10 +47,34 @@ bodyWrapper.addEventListener('click', () => {
   closeApplicationBar()
 })
 
-ghostIcon.addEventListener('click', () => {
+desktopCloseIcon.addEventListener('click', () => {
   closeCallBar()
   closeApplicationBar()
 })
+
+function getSwiper(swiperName) {
+  return new Swiper(swiperName, {
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true
+    },
+  
+    slidesPerView: 'auto',
+    keyboard: true,
+  
+    breakpoints: {
+      768: {
+        initialSlide: 0,
+        spaceBetween: 0,
+        enabled: false
+      }
+    }
+  })
+}
+
+getSwiper('.brands__swiper')
+getSwiper('.technics__swiper')
+getSwiper('.prices__swiper')
 
 new Swiper('.page-nav', {
   slidesPerView: 'auto',
@@ -58,60 +82,6 @@ new Swiper('.page-nav', {
 
   breakpoints: {
     1440: {
-      initialSlide: 0,
-      spaceBetween: 0,
-      enabled: false
-    }
-  }
-})
-
-new Swiper('.brands__swiper', {
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-
-  slidesPerView: 'auto',
-  keyboard: true,
-
-  breakpoints: {
-    768: {
-      initialSlide: 0,
-      spaceBetween: 0,
-      enabled: false
-    }
-  }
-})
-
-new Swiper('.technics__swiper', {
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-
-  slidesPerView: 'auto',
-  keyboard: true,
-
-  breakpoints: {
-    768: {
-      initialSlide: 0,
-      spaceBetween: 0,
-      enabled: false
-    }
-  }
-})
-
-new Swiper('.prices__swiper', {
-  pagination: {
-    el: '.swiper-pagination',
-    clickable: true
-  },
-
-  slidesPerView: 'auto',
-  keyboard: true,
-
-  breakpoints: {
-    768: {
       initialSlide: 0,
       spaceBetween: 0,
       enabled: false
