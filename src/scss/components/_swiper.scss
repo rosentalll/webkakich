@@ -19,13 +19,18 @@
         margin: 0 16px 0 16px;
     }  
 
-    // &:hover .icon--go {
-    //     background-image: url('../../icons/go-hoover.svg');
-    // }
+    &:hover {
+        cursor: pointer;
+    }
 
-    // &:active .icon--go {
-    //     opacity: 0.7;
-    // }
+    &:hover .icon--go {
+        cursor: inherit;
+        background-image: url('../img/go-hoover.svg');
+    }
+
+    &:active .icon--go {
+        opacity: 0.7;
+    }
 }
 
 .swiper-pagination {
