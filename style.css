@@ -915,9 +915,6 @@ html {
   .page-nav__item {
     margin: 0; } }
 
-.about-us__wrapper {
-  padding: 0 16px 16px 16px; }
-
 .about-us__photo {
   display: block;
   min-width: 320px;
@@ -925,19 +922,21 @@ html {
   height: auto;
   margin: 0 auto 16px auto; }
 
+.about-us__text {
+  padding: 0 16px 0 16px; }
+
 .about-us__show-more {
   display: flex;
   align-items: center;
-  margin: 16px 0 16px 0; }
+  margin-top: 16px; }
 
 @media (min-width: 768px) {
   .about-us__wrapper {
     height: 230px;
-    position: relative;
-    padding-bottom: 0;
-    padding: 0 24px 0 24px; }
+    position: relative; }
   .about-us__text {
-    width: 46%; }
+    width: 46%;
+    padding: 0 24px 0 24px; }
   .about-us__photo {
     width: 360px;
     height: 208px;
@@ -949,15 +948,14 @@ html {
 @media (min-width: 1440px) {
   .about-us {
     height: 360px; }
-    .about-us__wrapper {
-      position: relative;
-      padding: 0 40px 80px 40px; }
     .about-us__photo {
       width: 531px;
       height: 307px;
       position: absolute;
       top: 0px;
       right: 3.5%; }
+    .about-us__text {
+      padding: 0 40px 0 40px; }
     .about-us__text span {
       display: inline !important; } }
 
