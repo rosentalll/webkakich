@@ -1,8 +1,4 @@
-.about-us {
-
-    &__wrapper {
-        padding: 0 16px 16px 16px;
-    }      
+.about-us {    
     
     &__photo {
         display: block;
@@ -14,10 +10,14 @@
         margin: 0 auto 16px auto;
     }
 
+    &__text {
+        padding: 0 16px 0 16px;
+    }
+
     &__show-more {
         display: flex;
         align-items: center;
-        margin: 16px 0 16px 0;
+        margin-top: 16px;
     }
 
 }
@@ -30,12 +30,11 @@
         &__wrapper {
             height: 230px;
             position: relative;
-            padding-bottom: 0;
-            padding: 0 24px 0 24px;
         }
 
         &__text {
             width: 46%;
+            padding: 0 24px 0 24px;
         }
     
         &__photo {
@@ -57,11 +56,6 @@
     .about-us {
 
         height: 360px;
-
-        &__wrapper {
-            position: relative;
-            padding: 0 40px 80px 40px;
-        }
     
         &__photo {
             width: 531px;
@@ -70,6 +64,10 @@
             position: absolute;
             top: 0px;
             right: 3.5%;
+        }
+
+        &__text {
+            padding: 0 40px 0 40px;
         }
 
         &__text span {
