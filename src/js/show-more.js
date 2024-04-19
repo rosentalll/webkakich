@@ -4,19 +4,18 @@
  const hiddenContent = document.querySelectorAll('.swiper-slide');
 
 function reverseShowMoreSign(event) {
-    if (event.target.closest('.brand')) {
-        event.target.classList.toggle('show-more--reverse');  
+    if (event.target.closest('.brand') || event.target.closest('.tech')) {
+        event.currentTarget.classList.toggle('show-more--reverse');  
     }
-    if (event.target.closest('.tech')) {  
-        event.target.classList.toggle('show-more--reverse');
-    }  
 }
 
  function changeShowMoreText(event) {
+
   const checkButtonClasses = (text) => {
     return (event.target.closest('.brand') && text.classList.contains('brand')) ||
             (event.target.closest('.tech') && text.classList.contains('tech'));
     }
+
   showMoreTextes.forEach((text) => {
     if (event.target.closest('.show-more--reverse') && checkButtonClasses(text)) {
         text.textContent = "Скрыть";
@@ -24,6 +23,7 @@ function reverseShowMoreSign(event) {
         text.textContent = "Показать всё";
     }
   });
+  
 }
 
 
