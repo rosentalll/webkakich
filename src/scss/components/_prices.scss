@@ -12,15 +12,15 @@
         height: 232px;
     }
 
-    &__table {
-        margin: 0 0 24px 0;
-    }
-
 }
 
 .prices-swiper {
 
-    &__list-item {
+    &__wrapper {
+        padding: 0;
+    }
+
+    &__card {
     
         width: 260px;
         height: 200px;
@@ -33,7 +33,7 @@
         position: relative;
     }
     
-    &__servises-description {
+    &__description {
 
         list-style: none;
 
@@ -68,75 +68,6 @@
         bottom: 14px;
     }
     
-}
-
-.prices-table {
-
-    &__header {
-        display: block;
-        width: 100%;
-    }
-
-    &__heading {
-
-        font-weight: normal;
-        color: $color__gray;
-        text-align: left;
-        
-        background-color: $color__body-bg;
-
-        padding: 10px 16px;
-        
-        &:last-child::after {
-            content: '';
-            display: block;
-
-            width: 119px;
-            height: 32px;
-            background-color: transparent;
-        }
-    }
-
-    &__body {
-        display: block;
-        width: 100%;
-    }
-
-    &__row {
-
-        display: grid;
-        grid-template-columns: 2fr 0.6fr 0.7fr 0.7fr;
-        grid-auto-rows: 100%;
-
-        position: relative;
-
-        &:not(:first-of-type)::after {
-
-            content: '';
-            display: block;
-        
-            height: 1px;
-            width: 97.65%;
-            background-color: $color__gray-light;
-        
-            position: absolute;
-            left: 1.1%
-        
-        }
-
-    }
-    
-    &__cell, &__heading {
-        display: flex;
-        align-items: center;
-    }
-
-    &__cell {
-        background-color: white;
-        padding: 16px;
-    }
-    
-
 }
 
 .disclaimer {
@@ -180,8 +111,58 @@
 
 @include laptop {
 
+    .prices__swiper {
+        height: auto;
+        margin: 0 auto 24px auto;
+    }
+
     .prices__wrapper{
         padding: 0 24px 48px 24px;
+    }
+    
+    .prices-swiper {
+        overflow: visible;
+
+        &__wrapper {
+            gap: 0;
+        }
+
+        &__card {
+           flex-basis: 100%; 
+           flex-shrink: 0;
+           height: auto;
+           box-sizing: border-box;
+
+           &:not(:nth-child(-n+2))::before {
+                content: '';
+                display: block;
+                height: 1px;
+                width: 97.5%;
+                margin: 0 auto;
+                background-color: $color__gray-light;
+           }
+        }
+
+        &__description {
+
+            display: grid;
+            grid-template-columns: 2.6fr 0.7fr 0.7fr 119px;
+            align-items: center;
+
+            padding: 14px;
+            
+            &--headings {
+                background-color: $color__body-bg;
+            }
+        }
+
+        &__plug {
+            display: block;
+            width: 119px;
+            height: 1px;
+            color: transparent;
+        }
+
     }
     
     .prices-swiper__button {
@@ -197,6 +178,10 @@
 
     .prices__wrapper{
         padding: 0 40px 0 40px;
+    }
+    
+    .prices-swiper__description {
+        padding: 16px 22px;
     }
 
 }

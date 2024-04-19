@@ -1,6 +1,11 @@
 .right-bar {
+    
     height: 100vh;
     right: 0;
+
+    &__form {
+        margin: 0 0 16px 0;
+    }
 }
 
 @include desktop {

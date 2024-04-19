@@ -1,44 +1,47 @@
 
-export const showMoreButtons = document.querySelectorAll('.show-more');
-export const showMoreTextes = document.querySelectorAll('.show-more__text');
-export const showMoreSigns = document.querySelectorAll('.show-more__sign');
-export const hiddenContent = document.querySelectorAll('.swiper-slide');
+ const showMoreButtons = document.querySelectorAll('.show-more');
+ const showMoreTextes = document.querySelectorAll('.show-more__text');
+ const hiddenContent = document.querySelectorAll('.swiper-slide');
 
-export function reverseShowMoreSign(button) {
-    showMoreSigns.forEach((sign) => {
-        if (button.classList.contains('brand') && sign.classList.contains('brand')) {
-            sign.classList.toggle('show-more__sign--reverse')
-            button.classList.toggle('showed');  
-        } 
-        if (button.classList.contains('tech') && sign.classList.contains('tech')) {  
-            sign.classList.toggle('show-more__sign--reverse');
-            button.classList.toggle('showed');
-        } 
-    }) 
+function reverseShowMoreSign(event) {
+    if (event.target.closest('.brand')) {
+        event.target.classList.toggle('show-more--reverse');  
+    }
+    if (event.target.closest('.tech')) {  
+        event.target.classList.toggle('show-more--reverse');
+    }  
 }
 
-export function changeShowMoreText(button) {
+ function changeShowMoreText(event) {
   const checkButtonClasses = (text) => {
-    return (button.classList.contains("brand") && text.classList.contains("brand")) ||
-            (button.classList.contains("tech") && text.classList.contains("tech"));
+    return (event.target.closest('.brand') && text.classList.contains('brand')) ||
+            (event.target.closest('.tech') && text.classList.contains('tech'));
     }
   showMoreTextes.forEach((text) => {
-    if (button.classList.contains("showed") && checkButtonClasses(text)) {
+    if (event.target.closest('.show-more--reverse') && checkButtonClasses(text)) {
         text.textContent = "Скрыть";
     } else if (checkButtonClasses(text)) {
-      text.textContent = "Показать всё";
+        text.textContent = "Показать всё";
     }
   });
 }
 
 
-export function showContent (button) {
+function showContent (event) {
     hiddenContent.forEach((item) => {
-        if (button.classList.contains('brand') && item.classList.contains('brand-hidden')) {   
+        if (event.target.closest('.brand') && item.classList.contains('brand-hidden')) {   
             item.classList.toggle('brands__swiper-slide--hidden') 
         }
-        if (button.classList.contains('tech') && item.classList.contains('tech-hidden')) {
+        if (event.target.closest('.tech') && item.classList.contains('tech-hidden')) {
             item.classList.toggle('technics__swiper-slide--hidden')
         }
     })
 }
+
+showMoreButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      reverseShowMoreSign(event)
+      changeShowMoreText(event)
+      showContent(event)
+    })
+  })

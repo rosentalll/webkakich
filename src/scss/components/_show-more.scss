@@ -5,33 +5,46 @@
 
     display: none;
 
-    margin: 0 0 24px 30px;
-
     background-color: $color__body-bg;
     border: transparent;
-    
-    &__sign {
+    padding: 0;
+
+    &::before {
+        content: '';
+        display: block;
+
         width: 24px;
         height: 24px;
-        transition: transform 0.25s;
+        background-image: url(../img/expand.svg);
 
-        &--reverse {
-            transform: rotate(180deg);
-        }
+        transition: transform 0.2s;
     }
+
+    &--indents {
+        margin: 0 0 24px 30px;
+    }
+}
+
+.show-more.show-more--reverse::before {
+    transform: rotate(180deg);
 }
 
 @include laptop {
     .show-more{
-        margin: 0 0 24px 38px;
-
+        
         display: flex;
         align-items: center;
+
+        &--indents {
+            margin: 0 0 24px 38px;
+        }
     }
 }
 
 @include desktop {
     .show-more {
-        margin: 0 0 24px 54px;
+        &--indents {
+            margin: 0 0 24px 54px;
+        }
     }
 }
