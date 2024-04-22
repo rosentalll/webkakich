@@ -24,15 +24,14 @@ function reverseShowMoreSign(event) {
 
 
 function showContent (event) {
+
+    const haveClasses = (targetClass, content, contentClass) => {
+        return event.target.closest(targetClass) && content.classList.contains(contentClass)
+    }
+
     hiddenContent.forEach((item) => {
-        if (event.target.closest('.brand') && item.classList.contains('brand-hidden')) {   
-            item.classList.toggle('brands__swiper-slide--hidden') 
-        }
-        if (event.target.closest('.tech') && item.classList.contains('tech-hidden')) {
-            item.classList.toggle('technics__swiper-slide--hidden')
-        }
-        if (event.target.closest('.text') && item.classList.contains('text-hidden')) {
-            item.classList.toggle('about-us__text--hidden')
-        }
+        if (haveClasses('.brand', item, 'brand-hidden')) item.classList.toggle('brands__swiper-slide--hidden') 
+        if (haveClasses('.tech', item, 'tech-hidden')) item.classList.toggle('technics__swiper-slide--hidden')
+        if (haveClasses('.text', item, 'text-hidden')) item.classList.toggle('about-us__text--hidden')    
     })
 }
