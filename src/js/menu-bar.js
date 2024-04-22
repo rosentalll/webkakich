@@ -5,7 +5,7 @@ const desktopCloseIcon = document.querySelector('.icon-close-desktop')
 const menuBarContainer = document.querySelector('.menu-bar');
 const menuBar = document.querySelector('.menu-bar__wrapper');
 const callBar = document.querySelector('.call-bar');
-const applicationBar = document.querySelector('.application-bar');
+const chatBar = document.querySelector('.chat-bar');
 
 const body = document.querySelector('.body');
 const bodyWrapper = document.querySelector('.body__wrapper');
@@ -15,36 +15,41 @@ sideBarOpenIcons.forEach((icon) => {
  
      event.stopPropagation()
  
-     if (icon.classList.contains('burger')) {
+     if (event.target.closest('.burger')) {
       moveMenuBar()
       switchOverlay()
      } 
  
-     if (icon.classList.contains('call') && menuBar.classList.contains('side-bar__wrapper--opened')) {
+     if (event.target.closest('.call') && menuBar.classList.contains('side-bar__wrapper--opened')) {
       moveRightBars(callBar)
       moveMenuBar()
      } else {
-      if (icon.classList.contains('call')) {
+      if (event.target.closest('.call')) {
          moveRightBars(callBar)
          switchOverlay()
       }
      }
  
-     if (icon.classList.contains('application')) {
-      moveRightBars(applicationBar)
-      switchOverlay()
+     if (event.target.closest('.chat') && menuBar.classList.contains('side-bar__wrapper--opened')) {
+      moveRightBars(chatBar)
+      moveMenuBar()
+     } else {
+      if (event.target.closest('.chat')) {
+         moveRightBars(callBar)
+         switchOverlay()
+      }
      }
    })
  })
  
  sideBarCloseIcons.forEach((icon) => {
-   icon.addEventListener('click', () => {
+   icon.addEventListener('click', (event) => {
  
-     if (icon.classList.contains('burger')) moveMenuBar()
+     if (event.target.closest('.burger')) moveMenuBar()
  
-     if (icon.classList.contains('call')) moveRightBars(callBar)
+     if (event.target.closest('.call')) moveRightBars(callBar)
  
-     if (icon.classList.contains('application')) moveRightBars(applicationBar)
+     if (event.target.closest('.chat')) moveRightBars(chatBar)
  
      switchOverlay()
  
@@ -73,7 +78,7 @@ function switchOverlay() {
 function closeAll() {
    menuBar.classList.remove('side-bar__wrapper--opened');
    callBar.classList.remove('side-bar__wrapper--opened');
-   applicationBar.classList.remove('side-bar__wrapper--opened');
+   chatBar.classList.remove('side-bar__wrapper--opened');
    desktopCloseIcon.classList.remove('icon-close-desktop--opened');
    bodyWrapper.classList.remove('body__wrapper--bleary');
    body.classList.remove('body--open');
