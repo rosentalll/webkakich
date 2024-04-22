@@ -49,15 +49,8 @@
     }
 }
 
-.menu-bar--bleary {
-    opacity: 1;
-}
-
 @include desktop {
     .side-bar__wrapper--opened {
         box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2);;
-    }
-    .menu-bar--bleary {
-        opacity: 0.25;
     }
 }

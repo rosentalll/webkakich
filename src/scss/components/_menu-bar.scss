@@ -92,6 +92,10 @@
         padding: 0 0 24px 0;
         
     }
+
+    &--bleary {
+        opacity: 1;
+    }
 }
 
 .contacts {
@@ -155,6 +159,10 @@
 
         &__header-wrapper {
             justify-content: space-between;
+        }
+
+        &--bleary {
+            opacity: 0.25;
         }
     }
     

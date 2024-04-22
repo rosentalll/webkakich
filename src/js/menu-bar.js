@@ -10,6 +10,51 @@ const applicationBar = document.querySelector('.application-bar');
 const body = document.querySelector('.body');
 const bodyWrapper = document.querySelector('.body__wrapper');
 
+sideBarOpenIcons.forEach((icon) => {
+   icon.addEventListener('click', (event) => {
+ 
+     event.stopPropagation()
+ 
+     if (icon.classList.contains('burger')) {
+      moveMenuBar()
+      switchOverlay()
+     } 
+ 
+     if (icon.classList.contains('call') && menuBar.classList.contains('side-bar__wrapper--opened')) {
+      moveRightBars(callBar)
+      moveMenuBar()
+     } else {
+      if (icon.classList.contains('call')) {
+         moveRightBars(callBar)
+         switchOverlay()
+      }
+     }
+ 
+     if (icon.classList.contains('application')) {
+      moveRightBars(applicationBar)
+      switchOverlay()
+     }
+   })
+ })
+ 
+ sideBarCloseIcons.forEach((icon) => {
+   icon.addEventListener('click', () => {
+ 
+     if (icon.classList.contains('burger')) moveMenuBar()
+ 
+     if (icon.classList.contains('call')) moveRightBars(callBar)
+ 
+     if (icon.classList.contains('application')) moveRightBars(applicationBar)
+ 
+     switchOverlay()
+ 
+   })
+ })
+ 
+ bodyWrapper.addEventListener('click', closeAll)
+ 
+ desktopCloseIcon.addEventListener('click', closeAll)
+
 function moveMenuBar() {
    menuBar.classList.toggle('side-bar__wrapper--opened');
 }
@@ -36,36 +81,3 @@ function closeAll() {
 }
 
 
-sideBarOpenIcons.forEach((icon) => {
-   icon.addEventListener('click', (event) => {
- 
-     event.stopPropagation()
- 
-     if (icon.classList.contains('burger')) moveMenuBar()
- 
-     if (icon.classList.contains('call')) moveRightBars(callBar)
- 
-     if (icon.classList.contains('application')) moveRightBars(applicationBar)
- 
-     switchOverlay()
- 
-   })
- })
- 
- sideBarCloseIcons.forEach((icon) => {
-   icon.addEventListener('click', () => {
- 
-     if (icon.classList.contains('burger')) moveMenuBar()
- 
-     if (icon.classList.contains('call')) moveRightBars(callBar)
- 
-     if (icon.classList.contains('application')) moveRightBars(applicationBar)
- 
-     switchOverlay()
- 
-   })
- })
- 
- bodyWrapper.addEventListener('click', closeAll)
- 
- desktopCloseIcon.addEventListener('click', closeAll)
