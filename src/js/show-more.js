@@ -1,29 +1,25 @@
 
  const showMoreButtons = document.querySelectorAll('.show-more');
- const showMoreTextes = document.querySelectorAll('.show-more__text');
- const hiddenContent = document.querySelectorAll('.swiper-slide');
+ const hiddenContent = document.querySelectorAll('.content-hidden');
+
+ showMoreButtons.forEach((button) => {
+    button.addEventListener('click', (event) => {
+      reverseShowMoreSign(event)
+      changeShowMoreText(event)
+      showContent(event)
+    })
+  })
 
 function reverseShowMoreSign(event) {
-    if (event.target.closest('.brand') || event.target.closest('.tech')) {
-        event.currentTarget.classList.toggle('show-more--reverse');  
-    }
+    event.currentTarget.classList.toggle('show-more--reverse')
 }
 
  function changeShowMoreText(event) {
+    const show = event.currentTarget.children[0]
+    const hidden = event.currentTarget.children[1]
 
-  const checkButtonClasses = (text) => {
-    return (event.target.closest('.brand') && text.classList.contains('brand')) ||
-            (event.target.closest('.tech') && text.classList.contains('tech'));
-    }
-
-  showMoreTextes.forEach((text) => {
-    if (event.target.closest('.show-more--reverse') && checkButtonClasses(text)) {
-        text.textContent = "Скрыть";
-    } else if (checkButtonClasses(text)) {
-        text.textContent = "Показать всё";
-    }
-  });
-  
+    show.classList.toggle('text--hidden')
+    hidden.classList.toggle('text--hidden')
 }
 
 
@@ -35,13 +31,8 @@ function showContent (event) {
         if (event.target.closest('.tech') && item.classList.contains('tech-hidden')) {
             item.classList.toggle('technics__swiper-slide--hidden')
         }
+        if (event.target.closest('.text') && item.classList.contains('text-hidden')) {
+            item.classList.toggle('about-us__text--hidden')
+        }
     })
 }
-
-showMoreButtons.forEach((button) => {
-    button.addEventListener('click', (event) => {
-      reverseShowMoreSign(event)
-      changeShowMoreText(event)
-      showContent(event)
-    })
-  })

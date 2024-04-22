@@ -29,6 +29,10 @@
     transform: rotate(180deg);
 }
 
+.text--hidden {
+    display: none;
+}
+
 @include laptop {
     .show-more{
         
@@ -48,3 +52,5 @@
         }
     }
 }
+
+
