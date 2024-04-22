@@ -948,7 +948,7 @@ html {
   margin: 0 auto 16px auto; }
 
 .about-us__text {
-  padding: 0 16px 0 16px; }
+  padding: 0 16px 16px 16px; }
   .about-us__text--hidden {
     display: none; }
 
@@ -959,11 +959,11 @@ html {
 
 @media (min-width: 768px) {
   .about-us__wrapper {
-    height: 230px;
+    min-height: 230px;
     position: relative; }
   .about-us__text {
     width: 46%;
-    padding: 0 24px 0 24px; }
+    padding: 0 24px 16px 24px; }
   .about-us__photo {
     width: 360px;
     height: 208px;
@@ -982,7 +982,7 @@ html {
       top: 0px;
       right: 3.5%; }
     .about-us__text {
-      padding: 0 40px 0 40px; } }
+      padding: 0 40px 16px 40px; } }
 
 .brands__swiper {
   height: 130px;
