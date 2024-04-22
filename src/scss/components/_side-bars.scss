@@ -8,15 +8,16 @@
 
 .side-bar {
     overflow-x: hidden;
-    min-width: 320px;
     max-width: 360px;
+    width: 100%;
     position: absolute;
 
     &__wrapper {
 
         opacity: 0;
         
-        width: 320px;
+        max-width: 100%;
+        width: 100%;
         height: 100%;
 
         background-color: white; 
@@ -50,7 +51,13 @@
 }
 
 @include desktop {
-    .side-bar__wrapper--opened {
-        box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2);;
+
+    .side-bar {
+        max-width: 440px;
+
+        &__wrapper--opened {
+            box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2);;
+        }
     }
+    
 }
