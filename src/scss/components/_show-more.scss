@@ -5,7 +5,7 @@
 
     display: none;
 
-    background-color: $color__body-bg;
+    background-color: transparent;
     border: transparent;
     padding: 0;
 
@@ -21,7 +21,7 @@
     }
 
     &--indents {
-        margin: 0 0 24px 30px;
+        padding: 0 0 24px 30px;
     }
 }
 
@@ -40,7 +40,7 @@
         align-items: center;
 
         &--indents {
-            margin: 0 0 24px 38px;
+            padding: 0 0 24px 38px;
         }
     }
 }
@@ -48,7 +48,7 @@
 @include desktop {
     .show-more {
         &--indents {
-            margin: 0 0 24px 54px;
+            padding: 0 0 24px 54px;
         }
     }
 }

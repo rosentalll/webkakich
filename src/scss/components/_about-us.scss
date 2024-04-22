@@ -19,12 +19,6 @@
         }
     }
 
-    &__show-more {
-        display: flex;
-        align-items: center;
-        margin-top: 16px;
-    }
-
 }
 
 
@@ -60,7 +54,7 @@
     
     .about-us {
 
-        height: 360px;
+        min-height: 360px;
     
         &__photo {
             width: 531px;

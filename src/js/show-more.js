@@ -15,11 +15,11 @@ function reverseShowMoreSign(event) {
 }
 
  function changeShowMoreText(event) {
-    const show = event.currentTarget.children[0]
-    const hidden = event.currentTarget.children[1]
+    const defaultText = event.currentTarget.children[0]
+    const changedText = event.currentTarget.children[1]
 
-    show.classList.toggle('text--hidden')
-    hidden.classList.toggle('text--hidden')
+    defaultText.classList.toggle('text--hidden')
+    changedText.classList.toggle('text--hidden')
 }
 
 
