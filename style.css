@@ -616,12 +616,13 @@ html {
 
 .side-bar {
   overflow-x: hidden;
-  min-width: 320px;
   max-width: 360px;
+  width: 100%;
   position: absolute; }
   .side-bar__wrapper {
     opacity: 0;
-    width: 320px;
+    max-width: 100%;
+    width: 100%;
     height: 100%;
     background-color: white;
     padding: 24px 16px 24px 16px;
@@ -638,8 +639,10 @@ html {
       z-index: 300; }
 
 @media (min-width: 1440px) {
-  .side-bar__wrapper--opened {
-    box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2); } }
+  .side-bar {
+    max-width: 440px; }
+    .side-bar__wrapper--opened {
+      box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2); } }
 
 .menu-bar {
   height: 100vh;
@@ -716,7 +719,6 @@ html {
   .change-lang-button:hover {
     opacity: 0.6; }
 
-/* МЕДИАЗАПРОСЫ (720 и 1120 px) */
 @media (min-width: 360px) {
   .menu-bar {
     width: 360px; }
@@ -748,7 +750,6 @@ html {
 
 @media (min-width: 1440px) {
   .right-bar {
-    max-width: 440px;
     width: 440px; }
     .right-bar__wrapper {
       width: 440px;
