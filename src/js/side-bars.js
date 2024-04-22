@@ -20,7 +20,7 @@ sideBarOpenIcons.forEach((icon) => {
       switchOverlay()
      } 
  
-     if (event.target.closest('.call') && menuBar.classList.contains('side-bar__wrapper--opened')) {
+     if (isMenuBarOpened(event, '.call')) {
       moveRightBars(callBar)
       moveMenuBar()
      } else {
@@ -30,44 +30,50 @@ sideBarOpenIcons.forEach((icon) => {
       }
      }
  
-     if (event.target.closest('.chat') && menuBar.classList.contains('side-bar__wrapper--opened')) {
+     if (isMenuBarOpened(event, '.chat')) {
       moveRightBars(chatBar)
       moveMenuBar()
      } else {
       if (event.target.closest('.chat')) {
-         moveRightBars(callBar)
+         moveRightBars(chatBar)
          switchOverlay()
       }
      }
    })
  })
  
- sideBarCloseIcons.forEach((icon) => {
-   icon.addEventListener('click', (event) => {
+sideBarCloseIcons.forEach((icon) => {
+icon.addEventListener('click', (event) => {
+
+   if (event.target.closest('.burger')) moveMenuBar()
+
+   if (event.target.closest('.call')) moveRightBars(callBar)
+
+   if (event.target.closest('.chat')) moveRightBars(chatBar)
+
+   switchOverlay()
+
+})
+})
  
-     if (event.target.closest('.burger')) moveMenuBar()
- 
-     if (event.target.closest('.call')) moveRightBars(callBar)
- 
-     if (event.target.closest('.chat')) moveRightBars(chatBar)
- 
-     switchOverlay()
- 
-   })
- })
- 
- bodyWrapper.addEventListener('click', closeAll)
- 
- desktopCloseIcon.addEventListener('click', closeAll)
+bodyWrapper.addEventListener('click', closeAll)
+
+desktopCloseIcon.addEventListener('click', closeAll)
+
+/////////////////////////////////////////////////////////////
 
 function moveMenuBar() {
    menuBar.classList.toggle('side-bar__wrapper--opened');
 }
 
-function moveRightBars(sideBar) {
-   sideBar.classList.toggle('side-bar__wrapper--opened');
+function moveRightBars(rightBar) {
+   rightBar.classList.toggle('side-bar__wrapper--opened');
    desktopCloseIcon.classList.toggle('icon-close-desktop--opened');
    menuBarContainer.classList.toggle('menu-bar--bleary');
+}
+
+function isMenuBarOpened(event, rightBar) {
+   return event.target.closest(rightBar) && menuBar.classList.contains('side-bar__wrapper--opened')
 }
 
 function switchOverlay() {
@@ -84,5 +90,3 @@ function closeAll() {
    body.classList.remove('body--open');
    menuBarContainer.classList.remove('menu-bar--bleary');
 }
-
-
