@@ -637,14 +637,9 @@ html {
       position: fixed;
       z-index: 300; }
 
-.menu-bar--bleary {
-  opacity: 1; }
-
 @media (min-width: 1440px) {
   .side-bar__wrapper--opened {
-    box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2); }
-  .menu-bar--bleary {
-    opacity: 0.25; } }
+    box-shadow: -16px 0 58px -48px rgba(14, 24, 80, 0.2); } }
 
 .menu-bar {
   height: 100vh;
@@ -701,6 +696,8 @@ html {
     -moz-column-gap: 10px;
          column-gap: 10px;
     padding: 0 0 24px 0; }
+  .menu-bar--bleary {
+    opacity: 1; }
 
 .contacts__phone {
   font-size: 1.5em;
@@ -739,7 +736,9 @@ html {
       transform: translateX(0);
       width: 320px; }
     .menu-bar__header-wrapper {
-      justify-content: space-between; } }
+      justify-content: space-between; }
+    .menu-bar--bleary {
+      opacity: 0.25; } }
 
 .right-bar {
   height: 100vh;
