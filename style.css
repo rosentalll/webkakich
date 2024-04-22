@@ -810,6 +810,9 @@ html {
 .show-more.show-more--reverse::before {
   transform: rotate(180deg); }
 
+.text--hidden {
+  display: none; }
+
 @media (min-width: 768px) {
   .show-more {
     display: flex;
@@ -946,6 +949,8 @@ html {
 
 .about-us__text {
   padding: 0 16px 0 16px; }
+  .about-us__text--hidden {
+    display: none; }
 
 .about-us__show-more {
   display: flex;
@@ -977,9 +982,7 @@ html {
       top: 0px;
       right: 3.5%; }
     .about-us__text {
-      padding: 0 40px 0 40px; }
-    .about-us__text span {
-      display: inline !important; } }
+      padding: 0 40px 0 40px; } }
 
 .brands__swiper {
   height: 130px;
